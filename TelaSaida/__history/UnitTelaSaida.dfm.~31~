@@ -1,0 +1,568 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Sa'#237'da De Produtos'
+  ClientHeight = 358
+  ClientWidth = 819
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Shape1: TShape
+    Left = 0
+    Top = 0
+    Width = 819
+    Height = 358
+    Margins.Bottom = 1
+    Align = alClient
+    Brush.Color = clMedGray
+    ExplicitTop = -8
+    ExplicitWidth = 1056
+    ExplicitHeight = 640
+  end
+  object lbl1: TLabel
+    Left = 72
+    Top = 76
+    Width = 125
+    Height = 16
+    Caption = 'C'#243'digo Do Produto:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lbl2: TLabel
+    Left = 240
+    Top = 76
+    Width = 139
+    Height = 16
+    Caption = 'Quantidade De Sa'#237'da:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lbl3: TLabel
+    Left = 128
+    Top = 24
+    Width = 164
+    Height = 24
+    Caption = 'Sa'#237'da De Produtos'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -20
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 71
+    Top = 148
+    Width = 56
+    Height = 16
+    Caption = ' Produto'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label1: TLabel
+    Left = 71
+    Top = 212
+    Width = 31
+    Height = 16
+    Caption = 'Filial:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object dbCodPro: TDBEdit
+    Left = 72
+    Top = 104
+    Width = 125
+    Height = 21
+    DataField = 'cod_saidaproduto'
+    DataSource = DataSource2
+    Enabled = False
+    TabOrder = 0
+    OnChange = dbCodProChange
+  end
+  object dbQtdSaida: TDBEdit
+    Left = 240
+    Top = 104
+    Width = 135
+    Height = 21
+    DataField = 'qtd_saida'
+    DataSource = DataSource2
+    Enabled = False
+    TabOrder = 1
+  end
+  object edtdescpro: TEdit
+    Left = 72
+    Top = 170
+    Width = 307
+    Height = 21
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+  end
+  object DBComboBox1: TDBComboBox
+    Left = 72
+    Top = 234
+    Width = 308
+    Height = 21
+    DataField = 'filial'
+    DataSource = DataSource2
+    Enabled = False
+    Items.Strings = (
+      'Filial 1'
+      'Filial 2'
+      'Filial 3'
+      'Filial 4'
+      'Filial 5'
+      'Filial 6'
+      'Filial 7'
+      'Filial 8'
+      'Filial 9'
+      'Filial 10')
+    TabOrder = 3
+  end
+  object DBGrid1: TDBGrid
+    Left = 415
+    Top = 178
+    Width = 394
+    Height = 175
+    DataSource = DataSourcesaida
+    Enabled = False
+    TabOrder = 4
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'id_saida'
+        Visible = False
+      end
+      item
+        Expanded = False
+        FieldName = 'cod_saidaproduto'
+        Title.Caption = 'Codigo'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold, fsUnderline]
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'qtd_saida'
+        Title.Caption = 'Quantidade Saida'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold, fsUnderline]
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'desc_produto'
+        Title.Caption = 'Produto'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold, fsUnderline]
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'filial'
+        Title.Caption = 'Filial'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold, fsUnderline]
+        Width = 100
+        Visible = True
+      end>
+  end
+  object DBGrid2: TDBGrid
+    Left = 415
+    Top = 24
+    Width = 394
+    Height = 140
+    DataSource = DataSource2
+    Enabled = False
+    TabOrder = 5
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'id_saida'
+        Visible = False
+      end
+      item
+        Expanded = False
+        FieldName = 'cod_saidaproduto'
+        Title.Caption = 'Codigo'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold, fsUnderline]
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'desc_produto'
+        Title.Caption = 'Produto'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold, fsUnderline]
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'qtd_saida'
+        Title.Caption = 'Quantidade'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold, fsUnderline]
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'filial'
+        Title.Caption = 'Filial'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold, fsUnderline]
+        Width = 100
+        Visible = True
+      end>
+  end
+  object GroupBox1: TGroupBox
+    Left = 50
+    Top = 304
+    Width = 337
+    Height = 49
+    TabOrder = 6
+  end
+  object btncadastrar: TButton
+    Left = 58
+    Top = 312
+    Width = 74
+    Height = 30
+    Caption = 'Cadastrar'
+    TabOrder = 7
+    OnClick = btnCadastrarClick
+  end
+  object btnins: TButton
+    Left = 138
+    Top = 312
+    Width = 74
+    Height = 30
+    Caption = 'Inserir'
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clInactiveBorder
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 8
+    OnClick = btninsClick
+  end
+  object btncan: TButton
+    Left = 218
+    Top = 312
+    Width = 74
+    Height = 30
+    Caption = 'Cancelar'
+    Enabled = False
+    TabOrder = 9
+    OnClick = btncanClick
+  end
+  object btnsalvar: TButton
+    Left = 293
+    Top = 312
+    Width = 83
+    Height = 30
+    Caption = 'Salvar'
+    TabOrder = 10
+    OnClick = btnsalvarClick
+  end
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=MSDASQL.1;Persist Security Info=False;Data Source=Proje' +
+      'toFinal'
+    LoginPrompt = False
+    Left = 16
+    Top = 32
+  end
+  object ADOQuerysaida: TADOQuery
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select *from saida for update')
+    Left = 712
+    Top = 288
+    object ADOQuerysaidaid_saida: TAutoIncField
+      FieldName = 'id_saida'
+      ReadOnly = True
+    end
+    object ADOQuerysaidacod_saidaproduto: TIntegerField
+      FieldName = 'cod_saidaproduto'
+    end
+    object ADOQuerysaidaqtd_saida: TIntegerField
+      FieldName = 'qtd_saida'
+    end
+    object ADOQuerysaidadesc_produto: TStringField
+      FieldName = 'desc_produto'
+      Size = 40
+    end
+    object ADOQuerysaidafilial: TStringField
+      FieldName = 'filial'
+      Size = 40
+    end
+  end
+  object DataSourcesaida: TDataSource
+    DataSet = ADOQuerysaida
+    Left = 568
+    Top = 304
+  end
+  object FDMemTable1: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id_saida'
+        Attributes = [faReadonly]
+        DataType = ftAutoInc
+      end
+      item
+        Name = 'cod_saidaproduto'
+        DataType = ftInteger
+      end
+      item
+        Name = 'qtd_saida'
+        DataType = ftInteger
+      end
+      item
+        Name = 'desc_produto'
+        DataType = ftString
+        Size = 40
+      end
+      item
+        Name = 'filial'
+        DataType = ftString
+        Size = 40
+      end>
+    IndexDefs = <>
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    FormatOptions.AssignedValues = [fvMaxBcdPrecision, fvMaxBcdScale]
+    FormatOptions.MaxBcdPrecision = 2147483647
+    FormatOptions.MaxBcdScale = 1073741823
+    ResourceOptions.AssignedValues = [rvPersistent, rvSilentMode]
+    ResourceOptions.Persistent = True
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvUpdateChngFields, uvUpdateMode, uvLockMode, uvLockPoint, uvLockWait, uvRefreshMode, uvFetchGeneratorsPoint, uvCheckRequired, uvCheckReadOnly, uvCheckUpdatable, uvAutoCommitUpdates]
+    UpdateOptions.LockWait = True
+    UpdateOptions.FetchGeneratorsPoint = gpNone
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    StoreDefs = True
+    Left = 504
+    Top = 88
+    Content = {
+      414442530F000000C5020000FF00010001FF02FF03040016000000460044004D
+      0065006D005400610062006C006500310005000A0000005400610062006C0065
+      00060000000000070000080032000000090000FF0AFF0B040010000000690064
+      005F0073006100690064006100050010000000690064005F0073006100690064
+      0061000C00010000000E000D000F00011000011100011200011300011400FFFF
+      FFFF1500FFFFFFFF1600011700011800011900011A0010000000690064005F00
+      73006100690064006100FEFF0B04002000000063006F0064005F007300610069
+      0064006100700072006F006400750074006F0005002000000063006F0064005F
+      0073006100690064006100700072006F006400750074006F000C00020000000E
+      000D000F00011000011300011600011B00011800011A002000000063006F0064
+      005F0073006100690064006100700072006F006400750074006F00FEFF0B0400
+      120000007100740064005F007300610069006400610005001200000071007400
+      64005F00730061006900640061000C00030000000E000D000F00011000011300
+      011600011B00011800011A00120000007100740064005F007300610069006400
+      6100FEFF0B04001800000064006500730063005F00700072006F006400750074
+      006F0005001800000064006500730063005F00700072006F006400750074006F
+      000C00040000000E001C001D00280000000F00011000011300011600011B0001
+      1800011A001800000064006500730063005F00700072006F006400750074006F
+      001E0028000000FEFF0B04000C000000660069006C00690061006C0005000C00
+      0000660069006C00690061006C000C00050000000E001C001D00280000000F00
+      011000011300011600011B00011800011A000C000000660069006C0069006100
+      6C001E0028000000FEFEFF1FFEFF20FEFF21FEFEFEFF22FEFF23240003000000
+      FF25FEFEFE0E004D0061006E0061006700650072001E00550070006400610074
+      00650073005200650067006900730074007200790012005400610062006C0065
+      004C006900730074000A005400610062006C00650008004E0061006D00650014
+      0053006F0075007200630065004E0061006D0065000A00540061006200490044
+      00240045006E0066006F0072006300650043006F006E00730074007200610069
+      006E00740073001E004D0069006E0069006D0075006D00430061007000610063
+      00690074007900180043006800650063006B004E006F0074004E0075006C006C
+      00140043006F006C0075006D006E004C006900730074000C0043006F006C0075
+      006D006E00100053006F007500720063006500490044000E006400740049006E
+      0074003300320010004400610074006100540079007000650014005300650061
+      00720063006800610062006C006500120041006C006C006F0077004E0075006C
+      006C00100052006500610064004F006E006C0079000E004100750074006F0049
+      006E0063000800420061007300650022004100750074006F0049006E00630072
+      0065006D0065006E007400530065006500640022004100750074006F0049006E
+      006300720065006D0065006E007400530074006500700014004F0041006C006C
+      006F0077004E0075006C006C0012004F0052006500610064004F006E006C0079
+      0010004F0049006E005700680065007200650020004F00410066007400650072
+      0049006E0073004300680061006E006700650064001A004F0072006900670069
+      006E0043006F006C004E0061006D00650012004F0049006E0055007000640061
+      007400650018006400740041006E007300690053007400720069006E00670008
+      00530069007A006500140053006F007500720063006500530069007A0065001C
+      0043006F006E00730074007200610069006E0074004C00690073007400100056
+      006900650077004C006900730074000E0052006F0077004C0069007300740018
+      00520065006C006100740069006F006E004C006900730074001C005500700064
+      0061007400650073004A006F00750072006E0061006C00120053006100760065
+      0050006F0069006E0074000E004300680061006E00670065007300}
+    object FDMemTable1id_saida: TFDAutoIncField
+      FieldName = 'id_saida'
+      ReadOnly = True
+    end
+    object FDMemTable1cod_saidaproduto: TIntegerField
+      FieldName = 'cod_saidaproduto'
+    end
+    object FDMemTable1qtd_saida: TIntegerField
+      FieldName = 'qtd_saida'
+    end
+    object FDMemTable1desc_produto: TStringField
+      FieldName = 'desc_produto'
+      Size = 40
+    end
+    object FDMemTable1filial: TStringField
+      FieldName = 'filial'
+      Size = 40
+    end
+  end
+  object DataSource2: TDataSource
+    DataSet = FDMemTable1
+    Left = 584
+    Top = 88
+  end
+  object ADOQueryprodutoAtualiza: TADOQuery
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from produto for update')
+    Left = 72
+    Top = 168
+    object ADOQueryprodutoAtualizaid_produto: TAutoIncField
+      FieldName = 'id_produto'
+      ReadOnly = True
+    end
+    object ADOQueryprodutoAtualizacod_produto: TIntegerField
+      FieldName = 'cod_produto'
+    end
+    object ADOQueryprodutoAtualizadesc_produto: TStringField
+      FieldName = 'desc_produto'
+      Size = 40
+    end
+    object ADOQueryprodutoAtualizamarca: TStringField
+      FieldName = 'marca'
+      Size = 30
+    end
+    object ADOQueryprodutoAtualizaquantidade: TIntegerField
+      FieldName = 'quantidade'
+    end
+    object ADOQueryprodutoAtualizapreco_compra: TFloatField
+      FieldName = 'preco_compra'
+    end
+    object ADOQueryprodutoAtualizapreco_venda: TFloatField
+      FieldName = 'preco_venda'
+    end
+    object ADOQueryprodutoAtualizafornecedor: TStringField
+      FieldName = 'fornecedor'
+      Size = 100
+    end
+  end
+  object ADOQueryProduto: TADOQuery
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from produto for update')
+    Left = 240
+    Top = 24
+    object ADOQueryProdutoid_produto: TAutoIncField
+      FieldName = 'id_produto'
+      ReadOnly = True
+    end
+    object ADOQueryProdutocod_produto: TIntegerField
+      FieldName = 'cod_produto'
+    end
+    object ADOQueryProdutodesc_produto: TStringField
+      FieldName = 'desc_produto'
+      Size = 40
+    end
+    object ADOQueryProdutomarca: TStringField
+      FieldName = 'marca'
+      Size = 30
+    end
+    object ADOQueryProdutoquantidade: TIntegerField
+      FieldName = 'quantidade'
+    end
+    object ADOQueryProdutopreco_compra: TFloatField
+      FieldName = 'preco_compra'
+    end
+    object ADOQueryProdutopreco_venda: TFloatField
+      FieldName = 'preco_venda'
+    end
+    object ADOQueryProdutofornecedor: TStringField
+      FieldName = 'fornecedor'
+      Size = 100
+    end
+  end
+end

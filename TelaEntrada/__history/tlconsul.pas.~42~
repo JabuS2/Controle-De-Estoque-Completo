@@ -1,0 +1,174 @@
+unit tlconsul;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Mask, Vcl.DBCtrls,
+  Vcl.ExtCtrls, Data.DB, Data.Win.ADODB, Vcl.Grids, Vcl.DBGrids,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.StorageBin, FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+
+type
+  TForm1 = class(TForm)
+    adcpro: TLabel;
+    lblcodigo: TLabel;
+    lblqnt: TLabel;
+    btnins: TButton;
+    btncan: TButton;
+    edtcod: TDBEdit;
+    edtqnd: TDBEdit;
+    Shape1: TShape;
+    ADOConnection1: TADOConnection;
+    ADOQuery1: TADOQuery;
+    DataSource1: TDataSource;
+    DBGrid1: TDBGrid;
+    DBGrid2: TDBGrid;
+    ADOQuery2: TADOQuery;
+    DataSource2: TDataSource;
+    btnCadastrar: TButton;
+    btnsalvar: TButton;
+    ADOQuery1id_entrada: TAutoIncField;
+    ADOQuery1cod_entradaproduto: TIntegerField;
+    ADOQuery1qtd_entrada: TIntegerField;
+    ADOQuery2id_produto: TAutoIncField;
+    ADOQuery2cod_produto: TIntegerField;
+    ADOQuery2desc_produto: TStringField;
+    ADOQuery2marca: TStringField;
+    ADOQuery2quantidade: TIntegerField;
+    ADOQuery2preco_compra: TFloatField;
+    ADOQuery2preco_venda: TFloatField;
+    ADOQuery2fornecedor: TStringField;
+    ADOQuery1desc_produto: TStringField;
+    Label2: TLabel;
+    Edit1: TEdit;
+    GroupBox1: TGroupBox;
+    ADOQuery4: TADOQuery;
+    DataSource4: TDataSource;
+    ADOQuery4id_produto: TAutoIncField;
+    ADOQuery4cod_produto: TIntegerField;
+    ADOQuery4desc_produto: TStringField;
+    ADOQuery4marca: TStringField;
+    ADOQuery4quantidade: TIntegerField;
+    ADOQuery4preco_compra: TFloatField;
+    ADOQuery4preco_venda: TFloatField;
+    ADOQuery4fornecedor: TStringField;
+    FDMemTable1: TFDMemTable;
+    FDMemTable1id_entrada: TFDAutoIncField;
+    FDMemTable1cod_entradaproduto: TIntegerField;
+    FDMemTable1qtd_entrada: TIntegerField;
+    FDMemTable1desc_produto: TStringField;
+    DataSource5: TDataSource;
+    DBGrid4: TDBGrid;
+    DBNavigator1: TDBNavigator;
+    procedure btncanClick(Sender: TObject);
+    procedure btnCadastrarClick(Sender: TObject);
+    procedure edtcodChange(Sender: TObject);
+    procedure btninsClick(Sender: TObject);
+    procedure btnsalvarClick(Sender: TObject);
+  private
+    procedure botoes;
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.botoes;
+begin
+  if btnCadastrar.Focused then
+  begin
+  //botoes
+  btncadastrar.Enabled:=false;
+  btnins.Enabled:=true;
+  btncan.Enabled:=true;
+  btnsalvar.Enabled:=false;
+  //grid
+  edtcod.Enabled:=true;
+  edtqnd.Enabled:=true;
+  edtcod.SetFocus;
+  end
+else if (btnins.Focused) or (btncan.Focused) then
+  begin
+    //botoes
+  btncadastrar.Enabled:=true;
+  btnins.Enabled:=false;
+  btncan.Enabled:=false;
+  btnsalvar.Enabled:=true;
+  //grid
+  edtcod.Enabled:=false;
+  edtqnd.Enabled:=false;
+  end;
+end;
+//BOTAO CADASTRAR
+procedure TForm1.btnCadastrarClick(Sender: TObject);
+begin
+botoes;
+Edit1.Clear;
+FDMemTable1.Append;
+end;
+//BOTAO CANCELAR
+procedure TForm1.btncanClick(Sender: TObject);
+begin
+FDMemTable1.EmptyDataSet;
+botoes;
+
+end;
+//BOTAO INSERIR
+procedure TForm1.btninsClick(Sender: TObject);
+begin
+if edtcod.text = '' then
+  begin
+   showmessage('Insira algo!');
+  end
+    else
+    begin
+      botoes;
+      FDMemTable1desc_produto.value := Edit1.text;
+      FDMemTable1.Post;
+    end;
+end;
+
+//BOTAO SALVAR
+procedure TForm1.btnsalvarClick(Sender: TObject);
+begin
+botoes;
+ FDMemTable1.First;
+ while not FDMemTable1.Eof do
+ begin
+  if adoquery4.locate('cod_produto', dbgrid4.Fields[1].value,[]) then
+    begin
+    adoquery4.edit;
+    adoquery4quantidade.value := adoquery4quantidade.value + fdmemtable1qtd_entrada.value;
+    adoquery4.Post;
+
+    adoquery1.Append;
+    adoquery1cod_entradaproduto.value := FDMemTable1cod_entradaproduto.value;
+    adoquery1qtd_entrada.value := FDMemTable1qtd_entrada.value;
+    adoquery1desc_produto.value := FDMemTable1desc_produto.value;
+    adoquery1.Post;
+
+    FDMemTable1.Next;
+    end;
+ end;
+ FDMemTable1.EmptyDataSet;
+end;
+
+//codigo para puxar o nome do produto sozinho
+procedure TForm1.edtcodChange(Sender: TObject);
+begin
+ADOQuery2.sql.clear;
+ADOQuery2.SQL.Add('select * from produto where cod_produto='''+edtcod.text+'''');
+ADOQuery2.Open;
+Edit1.Text:=adoquery2.FieldByName('desc_produto').AsString
+end;
+
+
+end.

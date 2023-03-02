@@ -1,0 +1,609 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Cadastrar Fornecedor'
+  ClientHeight = 476
+  ClientWidth = 778
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Shape1: TShape
+    Left = 0
+    Top = 0
+    Width = 778
+    Height = 476
+    Margins.Bottom = 1
+    Align = alClient
+    Brush.Color = clMedGray
+    ExplicitWidth = 350
+    ExplicitHeight = 401
+  end
+  object lbl1: TLabel
+    Left = 256
+    Top = 32
+    Width = 235
+    Height = 24
+    Caption = 'Cadastro De Fornecedores'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -20
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lbl2: TLabel
+    Left = 14
+    Top = 88
+    Width = 75
+    Height = 13
+    Caption = 'Nome Fantasia:'
+  end
+  object lbl3: TLabel
+    Left = 209
+    Top = 88
+    Width = 64
+    Height = 13
+    Caption = 'Raz'#227'o Social:'
+  end
+  object lbl4: TLabel
+    Left = 404
+    Top = 88
+    Width = 49
+    Height = 13
+    Caption = 'Endere'#231'o:'
+  end
+  object lbl5: TLabel
+    Left = 616
+    Top = 88
+    Width = 41
+    Height = 13
+    Caption = 'N'#250'mero:'
+  end
+  object lbl6: TLabel
+    Left = 14
+    Top = 152
+    Width = 69
+    Height = 13
+    Caption = 'Complemento:'
+  end
+  object lbl7: TLabel
+    Left = 209
+    Top = 152
+    Width = 32
+    Height = 13
+    Caption = 'Bairro:'
+  end
+  object lbl8: TLabel
+    Left = 404
+    Top = 152
+    Width = 23
+    Height = 13
+    Caption = 'CEP:'
+  end
+  object lbl9: TLabel
+    Left = 616
+    Top = 152
+    Width = 37
+    Height = 13
+    Caption = 'Cidade:'
+  end
+  object lbl10: TLabel
+    Left = 14
+    Top = 216
+    Width = 17
+    Height = 13
+    Caption = 'UF:'
+  end
+  object lbl11: TLabel
+    Left = 209
+    Top = 216
+    Width = 38
+    Height = 13
+    Caption = 'Pessoa:'
+  end
+  object lbl12: TLabel
+    Left = 404
+    Top = 216
+    Width = 29
+    Height = 13
+    Caption = 'CNPJ:'
+  end
+  object lbl13: TLabel
+    Left = 616
+    Top = 216
+    Width = 91
+    Height = 13
+    Caption = 'Inscri'#231#227'o Estadual:'
+  end
+  object lbl14: TLabel
+    Left = 14
+    Top = 280
+    Width = 32
+    Height = 13
+    Caption = 'E-mail:'
+  end
+  object lbl15: TLabel
+    Left = 209
+    Top = 280
+    Width = 46
+    Height = 13
+    Caption = 'Telefone:'
+  end
+  object dbedt1: TDBEdit
+    Left = 14
+    Top = 107
+    Width = 121
+    Height = 21
+    DataField = 'nome_fantasia'
+    DataSource = DataSource1
+    Enabled = False
+    TabOrder = 0
+  end
+  object dbedt2: TDBEdit
+    Left = 209
+    Top = 107
+    Width = 121
+    Height = 21
+    DataField = 'razao_social'
+    DataSource = DataSource1
+    Enabled = False
+    TabOrder = 1
+  end
+  object dbedt3: TDBEdit
+    Left = 14
+    Top = 171
+    Width = 121
+    Height = 21
+    DataField = 'complemento'
+    DataSource = DataSource1
+    Enabled = False
+    TabOrder = 2
+  end
+  object dbedt4: TDBEdit
+    Left = 209
+    Top = 171
+    Width = 121
+    Height = 21
+    DataField = 'bairro'
+    DataSource = DataSource1
+    Enabled = False
+    TabOrder = 3
+  end
+  object dbedt5: TDBEdit
+    Left = 404
+    Top = 107
+    Width = 121
+    Height = 21
+    DataField = 'endereco'
+    DataSource = DataSource1
+    Enabled = False
+    TabOrder = 4
+  end
+  object dbedt6: TDBEdit
+    Left = 616
+    Top = 107
+    Width = 121
+    Height = 21
+    DataField = 'numero'
+    DataSource = DataSource1
+    Enabled = False
+    TabOrder = 5
+  end
+  object dbedt7: TDBEdit
+    Left = 14
+    Top = 235
+    Width = 121
+    Height = 21
+    DataField = 'uf_estado'
+    DataSource = DataSource1
+    Enabled = False
+    TabOrder = 6
+  end
+  object dbedt8: TDBEdit
+    Left = 209
+    Top = 235
+    Width = 121
+    Height = 21
+    DataField = 'pessoa'
+    DataSource = DataSource1
+    Enabled = False
+    TabOrder = 7
+    Visible = False
+  end
+  object dbedt9: TDBEdit
+    Left = 404
+    Top = 171
+    Width = 121
+    Height = 21
+    DataField = 'cep'
+    DataSource = DataSource1
+    Enabled = False
+    TabOrder = 8
+  end
+  object dbedt10: TDBEdit
+    Left = 616
+    Top = 171
+    Width = 121
+    Height = 21
+    DataField = 'cidade'
+    DataSource = DataSource1
+    Enabled = False
+    TabOrder = 9
+  end
+  object dbedt11: TDBEdit
+    Left = 616
+    Top = 235
+    Width = 121
+    Height = 21
+    DataField = 'insc_estadual'
+    DataSource = DataSource1
+    Enabled = False
+    TabOrder = 10
+  end
+  object dbedt12: TDBEdit
+    Left = 404
+    Top = 235
+    Width = 121
+    Height = 21
+    DataField = 'cnpj_fornecedor'
+    DataSource = DataSource1
+    Enabled = False
+    TabOrder = 11
+  end
+  object dbedt13: TDBEdit
+    Left = 14
+    Top = 299
+    Width = 121
+    Height = 21
+    DataField = 'email'
+    DataSource = DataSource1
+    Enabled = False
+    TabOrder = 12
+  end
+  object dbedt14: TDBEdit
+    Left = 209
+    Top = 299
+    Width = 121
+    Height = 21
+    DataField = 'telefone'
+    DataSource = DataSource1
+    Enabled = False
+    TabOrder = 13
+  end
+  object gr1: TDBGrid
+    Left = 14
+    Top = 336
+    Width = 756
+    Height = 132
+    DataSource = DataSource1
+    TabOrder = 14
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Alignment = taLeftJustify
+        Expanded = False
+        FieldName = 'id_fornecedor'
+        Title.Caption = 'ID'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold]
+        Width = 20
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nome_fantasia'
+        Title.Caption = 'Nome Fantasia'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold]
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'razao_social'
+        Title.Caption = 'Razao Social'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold]
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'endereco'
+        Title.Caption = 'Endereco'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold]
+        Width = 100
+        Visible = True
+      end
+      item
+        Alignment = taLeftJustify
+        Expanded = False
+        FieldName = 'numero'
+        Title.Caption = 'Numero'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold]
+        Width = 50
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'complemento'
+        Title.Caption = 'Complemento'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold]
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'bairro'
+        Title.Caption = 'Bairro'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold]
+        Width = 100
+        Visible = True
+      end
+      item
+        Alignment = taLeftJustify
+        Expanded = False
+        FieldName = 'cep'
+        Title.Caption = 'CEP'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold]
+        Width = 60
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'cidade'
+        Title.Caption = 'Cidade'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold]
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'uf_estado'
+        Title.Caption = 'UF'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold]
+        Width = 20
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'pessoa'
+        Title.Caption = 'Pessoa'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold]
+        Width = 50
+        Visible = True
+      end
+      item
+        Alignment = taLeftJustify
+        Expanded = False
+        FieldName = 'cnpj_fornecedor'
+        Title.Caption = 'CNPJ'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold]
+        Width = 70
+        Visible = True
+      end
+      item
+        Alignment = taLeftJustify
+        Expanded = False
+        FieldName = 'insc_estadual'
+        Title.Caption = 'Inscricao Estadual'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold]
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'email'
+        Title.Caption = 'E-mail'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold]
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'telefone'
+        Title.Caption = 'Telefone'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold]
+        Width = 100
+        Visible = True
+      end>
+  end
+  object btt1: TButton
+    Left = 374
+    Top = 283
+    Width = 89
+    Height = 47
+    Caption = 'Cadastrar'
+    TabOrder = 15
+    OnClick = btt1Click
+  end
+  object btt2: TButton
+    Left = 659
+    Top = 280
+    Width = 89
+    Height = 50
+    Caption = 'Cancelar'
+    Enabled = False
+    TabOrder = 16
+    OnClick = btt2Click
+  end
+  object btt3: TButton
+    Left = 564
+    Top = 280
+    Width = 89
+    Height = 50
+    Caption = 'Salvar'
+    Enabled = False
+    TabOrder = 17
+    OnClick = btt3Click
+  end
+  object btt4: TButton
+    Left = 469
+    Top = 280
+    Width = 89
+    Height = 50
+    Caption = 'Alterar'
+    TabOrder = 18
+    OnClick = btt4Click
+  end
+  object DBComboBox1: TDBComboBox
+    Left = 209
+    Top = 235
+    Width = 121
+    Height = 21
+    DataField = 'pessoa'
+    DataSource = DataSource1
+    Enabled = False
+    Items.Strings = (
+      'F'
+      'J')
+    TabOrder = 19
+  end
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=MSDASQL.1;Persist Security Info=False;Data Source=Proje' +
+      'toFinal'
+    LoginPrompt = False
+    Left = 40
+    Top = 8
+  end
+  object ADOQuery1: TADOQuery
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select*from fornecedores for update'
+      '')
+    Left = 104
+    Top = 16
+    object ADOQuery1id_fornecedor: TAutoIncField
+      FieldName = 'id_fornecedor'
+      ReadOnly = True
+    end
+    object ADOQuery1nome_fantasia: TStringField
+      FieldName = 'nome_fantasia'
+      Size = 30
+    end
+    object ADOQuery1razao_social: TStringField
+      FieldName = 'razao_social'
+      Size = 50
+    end
+    object ADOQuery1endereco: TStringField
+      FieldName = 'endereco'
+      Size = 100
+    end
+    object ADOQuery1numero: TIntegerField
+      FieldName = 'numero'
+    end
+    object ADOQuery1complemento: TStringField
+      FieldName = 'complemento'
+      Size = 100
+    end
+    object ADOQuery1bairro: TStringField
+      FieldName = 'bairro'
+      Size = 50
+    end
+    object ADOQuery1cep: TIntegerField
+      FieldName = 'cep'
+    end
+    object ADOQuery1cidade: TStringField
+      FieldName = 'cidade'
+      Size = 50
+    end
+    object ADOQuery1uf_estado: TStringField
+      FieldName = 'uf_estado'
+      Size = 2
+    end
+    object ADOQuery1pessoa: TStringField
+      FieldName = 'pessoa'
+      Size = 1
+    end
+    object ADOQuery1cnpj_fornecedor: TIntegerField
+      FieldName = 'cnpj_fornecedor'
+    end
+    object ADOQuery1insc_estadual: TIntegerField
+      FieldName = 'insc_estadual'
+    end
+    object ADOQuery1email: TStringField
+      FieldName = 'email'
+      Size = 50
+    end
+    object ADOQuery1telefone: TIntegerField
+      FieldName = 'telefone'
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOQuery1
+    Left = 160
+    Top = 16
+  end
+end

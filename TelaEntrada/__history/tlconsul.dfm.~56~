@@ -1,0 +1,535 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  Caption = 'Adicionar Produtos'
+  ClientHeight = 551
+  ClientWidth = 1097
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Shape1: TShape
+    Left = 0
+    Top = 0
+    Width = 1097
+    Height = 551
+    Margins.Bottom = 1
+    Align = alClient
+    Brush.Color = clMedGray
+    ExplicitLeft = -96
+    ExplicitTop = 128
+  end
+  object adcpro: TLabel
+    Left = 112
+    Top = 24
+    Width = 184
+    Height = 24
+    Caption = 'Entrada De Produtos'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -20
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblcodigo: TLabel
+    Left = 48
+    Top = 80
+    Width = 120
+    Height = 16
+    Caption = 'C'#243'digo Do Produto'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lblqnt: TLabel
+    Left = 208
+    Top = 80
+    Width = 150
+    Height = 16
+    Caption = 'Quantidade De Entrada'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 47
+    Top = 148
+    Width = 56
+    Height = 16
+    Caption = ' Produto'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object GroupBox1: TGroupBox
+    Left = 32
+    Top = 224
+    Width = 337
+    Height = 49
+    TabOrder = 8
+  end
+  object btnins: TButton
+    Left = 120
+    Top = 232
+    Width = 74
+    Height = 30
+    Caption = 'Inserir'
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clInactiveBorder
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    OnClick = btninsClick
+  end
+  object btncan: TButton
+    Left = 200
+    Top = 232
+    Width = 74
+    Height = 30
+    Caption = 'Cancelar'
+    Enabled = False
+    TabOrder = 1
+    OnClick = btncanClick
+  end
+  object edtcod: TDBEdit
+    Left = 48
+    Top = 113
+    Width = 121
+    Height = 21
+    BiDiMode = bdRightToLeft
+    DataField = 'cod_entradaproduto'
+    DataSource = DataSource5
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentBiDiMode = False
+    ParentFont = False
+    TabOrder = 2
+    OnChange = edtcodChange
+  end
+  object edtqnd: TDBEdit
+    Left = 224
+    Top = 113
+    Width = 121
+    Height = 21
+    BiDiMode = bdRightToLeft
+    DataField = 'qtd_entrada'
+    DataSource = DataSource5
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentBiDiMode = False
+    ParentFont = False
+    TabOrder = 3
+  end
+  object DBGrid2: TDBGrid
+    Left = 647
+    Top = 24
+    Width = 266
+    Height = 249
+    DataSource = DataSourceentrada
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 4
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = [fsBold]
+    Columns = <
+      item
+        Alignment = taLeftJustify
+        Expanded = False
+        FieldName = 'id_entrada'
+        Visible = False
+      end
+      item
+        Expanded = False
+        FieldName = 'cod_entradaproduto'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Title.Caption = 'Codigo'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold, fsUnderline]
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'desc_produto'
+        Title.Caption = 'Produto'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold, fsUnderline]
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'qtd_entrada'
+        Title.Caption = 'Quantidade'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold, fsUnderline]
+        Width = 80
+        Visible = True
+      end>
+  end
+  object btnCadastrar: TButton
+    Left = 40
+    Top = 232
+    Width = 74
+    Height = 30
+    Caption = 'Cadastrar'
+    TabOrder = 5
+    OnClick = btnCadastrarClick
+  end
+  object btnsalvar: TButton
+    Left = 275
+    Top = 232
+    Width = 83
+    Height = 30
+    Caption = 'Salvar'
+    TabOrder = 6
+    OnClick = btnsalvarClick
+  end
+  object edtdescproduto: TEdit
+    Left = 48
+    Top = 170
+    Width = 297
+    Height = 21
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 7
+  end
+  object DBGrid4: TDBGrid
+    Left = 375
+    Top = 24
+    Width = 266
+    Height = 249
+    DataSource = DataSource5
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 9
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -11
+    TitleFont.Name = 'Tahoma'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'id_entrada'
+        Visible = False
+      end
+      item
+        Expanded = False
+        FieldName = 'cod_entradaproduto'
+        Title.Caption = 'Codigo'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold, fsUnderline]
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'desc_produto'
+        Title.Caption = 'Produto'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold, fsUnderline]
+        Width = 100
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'qtd_entrada'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        Title.Caption = 'Quantidade'
+        Title.Font.Charset = DEFAULT_CHARSET
+        Title.Font.Color = clWindowText
+        Title.Font.Height = -11
+        Title.Font.Name = 'Tahoma'
+        Title.Font.Style = [fsBold, fsUnderline]
+        Width = 80
+        Visible = True
+      end>
+  end
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=MSDASQL.1;Persist Security Info=False;Data Source=Proje' +
+      'toFinal'
+    LoginPrompt = False
+    Left = 40
+    Top = 24
+  end
+  object ADOQueryentrada: TADOQuery
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select *from entrada  for update')
+    Left = 776
+    Top = 88
+    object ADOQueryentradaid_entrada: TAutoIncField
+      FieldName = 'id_entrada'
+      ReadOnly = True
+    end
+    object ADOQueryentradacod_entradaproduto: TIntegerField
+      FieldName = 'cod_entradaproduto'
+    end
+    object ADOQueryentradaqtd_entrada: TIntegerField
+      FieldName = 'qtd_entrada'
+    end
+    object ADOQueryentradadesc_produto: TStringField
+      FieldName = 'desc_produto'
+      Size = 40
+    end
+  end
+  object DataSourceentrada: TDataSource
+    DataSet = ADOQueryentrada
+    Left = 704
+    Top = 88
+  end
+  object ADOQueryprodutoatualiza: TADOQuery
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from produto for update')
+    Left = 232
+    Top = 48
+    object ADOQueryprodutoatualizaid_produto: TAutoIncField
+      FieldName = 'id_produto'
+      ReadOnly = True
+    end
+    object ADOQueryprodutoatualizacod_produto: TIntegerField
+      FieldName = 'cod_produto'
+    end
+    object ADOQueryprodutoatualizadesc_produto: TStringField
+      FieldName = 'desc_produto'
+      Size = 40
+    end
+    object ADOQueryprodutoatualizamarca: TStringField
+      FieldName = 'marca'
+      Size = 30
+    end
+    object ADOQueryprodutoatualizaquantidade: TIntegerField
+      FieldName = 'quantidade'
+    end
+    object ADOQueryprodutoatualizapreco_compra: TFloatField
+      FieldName = 'preco_compra'
+    end
+    object ADOQueryprodutoatualizapreco_venda: TFloatField
+      FieldName = 'preco_venda'
+    end
+    object ADOQueryprodutoatualizafornecedor: TStringField
+      FieldName = 'fornecedor'
+      Size = 100
+    end
+  end
+  object FDMemTable1: TFDMemTable
+    Active = True
+    FieldDefs = <
+      item
+        Name = 'id_entrada'
+        Attributes = [faReadonly]
+        DataType = ftAutoInc
+      end
+      item
+        Name = 'cod_entradaproduto'
+        DataType = ftInteger
+      end
+      item
+        Name = 'qtd_entrada'
+        DataType = ftInteger
+      end
+      item
+        Name = 'desc_produto'
+        DataType = ftString
+        Size = 40
+      end>
+    IndexDefs = <>
+    IndexFieldNames = 'cod_entradaproduto'
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    FormatOptions.AssignedValues = [fvMaxBcdPrecision, fvMaxBcdScale]
+    FormatOptions.MaxBcdPrecision = 2147483647
+    FormatOptions.MaxBcdScale = 1073741823
+    ResourceOptions.AssignedValues = [rvPersistent, rvSilentMode]
+    ResourceOptions.Persistent = True
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvUpdateChngFields, uvUpdateMode, uvLockMode, uvLockPoint, uvLockWait, uvRefreshMode, uvFetchGeneratorsPoint, uvCheckRequired, uvCheckReadOnly, uvCheckUpdatable, uvAutoCommitUpdates]
+    UpdateOptions.LockWait = True
+    UpdateOptions.FetchGeneratorsPoint = gpNone
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    StoreDefs = True
+    Left = 448
+    Top = 112
+    Content = {
+      414442530F00000088020000FF00010001FF02FF03040016000000460044004D
+      0065006D005400610062006C006500310005000A0000005400610062006C0065
+      00060000000000070000080032000000090000FF0AFF0B040014000000690064
+      005F0065006E0074007200610064006100050014000000690064005F0065006E
+      00740072006100640061000C00010000000E000D000F00011000011100011200
+      011300011400FFFFFFFF1500FFFFFFFF1600011700011800011900011A001400
+      0000690064005F0065006E0074007200610064006100FEFF0B04002400000063
+      006F0064005F0065006E0074007200610064006100700072006F006400750074
+      006F0005002400000063006F0064005F0065006E007400720061006400610070
+      0072006F006400750074006F000C00020000000E000D000F0001100001130001
+      1600011B00011800011A002400000063006F0064005F0065006E007400720061
+      0064006100700072006F006400750074006F00FEFF0B04001600000071007400
+      64005F0065006E00740072006100640061000500160000007100740064005F00
+      65006E00740072006100640061000C00030000000E000D000F00011000011300
+      011600011B00011800011A00160000007100740064005F0065006E0074007200
+      610064006100FEFF0B04001800000064006500730063005F00700072006F0064
+      00750074006F0005001800000064006500730063005F00700072006F00640075
+      0074006F000C00040000000E001C001D00280000000F00011000011300011600
+      011B00011800011A001800000064006500730063005F00700072006F00640075
+      0074006F001E0028000000FEFEFF1FFEFF20FEFF21FEFEFEFF22FEFF23240004
+      000000FF25FEFEFE0E004D0061006E0061006700650072001E00550070006400
+      6100740065007300520065006700690073007400720079001200540061006200
+      6C0065004C006900730074000A005400610062006C00650008004E0061006D00
+      6500140053006F0075007200630065004E0061006D0065000A00540061006200
+      49004400240045006E0066006F0072006300650043006F006E00730074007200
+      610069006E00740073001E004D0069006E0069006D0075006D00430061007000
+      61006300690074007900180043006800650063006B004E006F0074004E007500
+      6C006C00140043006F006C0075006D006E004C006900730074000C0043006F00
+      6C0075006D006E00100053006F007500720063006500490044000E0064007400
+      49006E0074003300320010004400610074006100540079007000650014005300
+      65006100720063006800610062006C006500120041006C006C006F0077004E00
+      75006C006C00100052006500610064004F006E006C0079000E00410075007400
+      6F0049006E0063000800420061007300650022004100750074006F0049006E00
+      6300720065006D0065006E007400530065006500640022004100750074006F00
+      49006E006300720065006D0065006E007400530074006500700014004F004100
+      6C006C006F0077004E0075006C006C0012004F0052006500610064004F006E00
+      6C00790010004F0049006E005700680065007200650020004F00410066007400
+      6500720049006E0073004300680061006E006700650064001A004F0072006900
+      670069006E0043006F006C004E0061006D00650012004F0049006E0055007000
+      640061007400650018006400740041006E007300690053007400720069006E00
+      67000800530069007A006500140053006F007500720063006500530069007A00
+      65001C0043006F006E00730074007200610069006E0074004C00690073007400
+      100056006900650077004C006900730074000E0052006F0077004C0069007300
+      74001800520065006C006100740069006F006E004C006900730074001C005500
+      7000640061007400650073004A006F00750072006E0061006C00120053006100
+      7600650050006F0069006E0074000E004300680061006E00670065007300}
+    object FDMemTable1id_entrada: TFDAutoIncField
+      FieldName = 'id_entrada'
+      ReadOnly = True
+    end
+    object FDMemTable1cod_entradaproduto: TIntegerField
+      FieldName = 'cod_entradaproduto'
+    end
+    object FDMemTable1qtd_entrada: TIntegerField
+      FieldName = 'qtd_entrada'
+    end
+    object FDMemTable1desc_produto: TStringField
+      FieldName = 'desc_produto'
+      Size = 40
+    end
+  end
+  object DataSource5: TDataSource
+    DataSet = FDMemTable1
+    Left = 552
+    Top = 112
+  end
+  object ADOQueryproduto: TADOQuery
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from produto for update')
+    Left = 312
+    Top = 40
+    object ADOQueryprodutoid_produto: TAutoIncField
+      FieldName = 'id_produto'
+      ReadOnly = True
+    end
+    object ADOQueryprodutocod_produto: TIntegerField
+      FieldName = 'cod_produto'
+    end
+    object ADOQueryprodutodesc_produto: TStringField
+      FieldName = 'desc_produto'
+      Size = 40
+    end
+    object ADOQueryprodutomarca: TStringField
+      FieldName = 'marca'
+      Size = 30
+    end
+    object ADOQueryprodutoquantidade: TIntegerField
+      FieldName = 'quantidade'
+    end
+    object ADOQueryprodutopreco_compra: TFloatField
+      FieldName = 'preco_compra'
+    end
+    object ADOQueryprodutopreco_venda: TFloatField
+      FieldName = 'preco_venda'
+    end
+    object ADOQueryprodutofornecedor: TStringField
+      FieldName = 'fornecedor'
+      Size = 100
+    end
+  end
+end

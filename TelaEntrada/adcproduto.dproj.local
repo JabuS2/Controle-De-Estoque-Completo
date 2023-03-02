@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/10/04 19:19:00.000.648,=C:\Users\guisa\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/11/22 19:48:41.000.111,=C:\Users\guisa\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/11/22 19:49:59.000.149,C:\Users\guisa\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\guisa\OneDrive\Área de Trabalho\Projeto Delphi\tlconsul.dfm</Transaction>
+    <Transaction>2022/11/22 19:49:59.000.149,C:\Users\guisa\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\guisa\OneDrive\Área de Trabalho\Projeto Delphi\tlconsul.pas</Transaction>
+    <Transaction>2022/11/22 20:52:49.000.031,C:\Users\guisa\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\guisa\OneDrive\Área de Trabalho\Projeto Delphi\adcproduto.dproj</Transaction>
+  </Transactions>  <ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="tlconsul.pas"/>
+  </ProjectSortOrder>
+</BorlandProject>

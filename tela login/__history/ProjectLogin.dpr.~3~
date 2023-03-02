@@ -1,0 +1,16 @@
+program ProjectLogin;
+
+uses
+  Vcl.Forms,
+  UnitLogin in 'UnitLogin.pas' {fmrLogin},
+  Vcl.Themes,
+  Vcl.Styles;
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TfmrLogin, fmrLogin);
+  Application.Run;
+end.

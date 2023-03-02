@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/09/27 19:37:03.000.116,=C:\Users\User\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/18 19:41:06.000.608,=C:\Users\User\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/11/22 19:21:26.000.224,=C:\Users\User\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/11/22 20:58:02.000.114,C:\Users\User\Documents\Embarcadero\Studio\Projects\Unit1.dfm=E:\LogicaProgamação\Delphi\TrabalhoDelphi\UnitTelaSaida.dfm</Transaction>
+    <Transaction>2022/11/22 20:58:02.000.114,C:\Users\User\Documents\Embarcadero\Studio\Projects\Unit1.pas=E:\LogicaProgamação\Delphi\TrabalhoDelphi\UnitTelaSaida.pas</Transaction>
+    <Transaction>2022/11/22 20:58:11.000.127,C:\Users\User\Documents\Embarcadero\Studio\Projects\Project1.dproj=E:\LogicaProgamação\Delphi\TrabalhoDelphi\ProjectSaida.dproj</Transaction>
+  </Transactions>
+</BorlandProject>

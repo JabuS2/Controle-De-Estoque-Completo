@@ -1,0 +1,301 @@
+object fmrProduto: TfmrProduto
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu]
+  Caption = 'Cadastro De Produto'
+  ClientHeight = 318
+  ClientWidth = 680
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Shape1: TShape
+    Left = 0
+    Top = 0
+    Width = 680
+    Height = 318
+    Margins.Bottom = 1
+    Align = alClient
+    Brush.Color = clMedGray
+    ExplicitTop = 8
+  end
+  object lbl1: TLabel
+    Left = 248
+    Top = 32
+    Width = 185
+    Height = 24
+    Caption = 'Cadastro De Produto'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -20
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lbl2: TLabel
+    Left = 56
+    Top = 104
+    Width = 41
+    Height = 13
+    Caption = 'C'#243'digo:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lbl3: TLabel
+    Left = 280
+    Top = 104
+    Width = 58
+    Height = 13
+    Caption = 'Descri'#231#227'o:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lbl4: TLabel
+    Left = 496
+    Top = 104
+    Width = 68
+    Height = 13
+    Caption = 'Quantidade:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lbl5: TLabel
+    Left = 56
+    Top = 176
+    Width = 100
+    Height = 13
+    Caption = 'Pre'#231'o De Compra:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lbl6: TLabel
+    Left = 280
+    Top = 176
+    Width = 91
+    Height = 13
+    Caption = 'Pre'#231'o De Venda:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object lbl7: TLabel
+    Left = 496
+    Top = 176
+    Width = 67
+    Height = 13
+    Caption = 'Fornecedor:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object GroupBox1: TGroupBox
+    Left = 40
+    Top = 248
+    Width = 331
+    Height = 62
+    TabOrder = 9
+  end
+  object dbedtCodigo: TDBEdit
+    Left = 56
+    Top = 123
+    Width = 121
+    Height = 21
+    DataField = 'cod_produto'
+    DataSource = DataSource1
+    Enabled = False
+    TabOrder = 0
+  end
+  object dbedtDescricao: TDBEdit
+    Left = 280
+    Top = 123
+    Width = 121
+    Height = 21
+    DataField = 'desc_produto'
+    DataSource = DataSource1
+    Enabled = False
+    TabOrder = 1
+  end
+  object dbedtQuantidade: TDBEdit
+    Left = 496
+    Top = 123
+    Width = 121
+    Height = 21
+    DataField = 'quantidade'
+    DataSource = DataSource1
+    Enabled = False
+    TabOrder = 2
+  end
+  object dbedtPrecoCompra: TDBEdit
+    Left = 56
+    Top = 195
+    Width = 121
+    Height = 21
+    DataField = 'preco_compra'
+    DataSource = DataSource1
+    Enabled = False
+    TabOrder = 3
+  end
+  object dbedtPrecoVenda: TDBEdit
+    Left = 280
+    Top = 195
+    Width = 121
+    Height = 21
+    DataField = 'preco_venda'
+    DataSource = DataSource1
+    Enabled = False
+    TabOrder = 4
+  end
+  object dbcbFornecedor: TDBComboBox
+    Left = 496
+    Top = 195
+    Width = 145
+    Height = 21
+    DataField = 'fornecedor'
+    DataSource = DataSource1
+    Enabled = False
+    Items.Strings = (
+      '')
+    TabOrder = 5
+    OnDropDown = dbcbFornecedorDropDown
+  end
+  object btnCadastrar: TButton
+    Left = 56
+    Top = 264
+    Width = 97
+    Height = 33
+    Caption = 'Cadastrar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 6
+    OnClick = btnCadastrarClick
+  end
+  object btnSalvar: TButton
+    Left = 159
+    Top = 264
+    Width = 97
+    Height = 33
+    Caption = 'Salvar'
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 7
+  end
+  object btnCancelar: TButton
+    Left = 262
+    Top = 264
+    Width = 97
+    Height = 33
+    Caption = 'Cancelar'
+    Enabled = False
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = [fsBold]
+    ParentFont = False
+    TabOrder = 8
+  end
+  object ADOConnection1: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=MSDASQL.1;Persist Security Info=False;Data Source=Proje' +
+      'toFinal'
+    LoginPrompt = False
+    Left = 56
+    Top = 24
+  end
+  object ADOQuery1: TADOQuery
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from produto for update')
+    Left = 120
+    Top = 32
+    object ADOQuery1id_produto: TAutoIncField
+      FieldName = 'id_produto'
+      ReadOnly = True
+    end
+    object ADOQuery1cod_produto: TIntegerField
+      FieldName = 'cod_produto'
+    end
+    object ADOQuery1desc_produto: TStringField
+      FieldName = 'desc_produto'
+      Size = 40
+    end
+    object ADOQuery1marca: TStringField
+      FieldName = 'marca'
+      Size = 30
+    end
+    object ADOQuery1quantidade: TIntegerField
+      FieldName = 'quantidade'
+    end
+    object ADOQuery1preco_compra: TFloatField
+      FieldName = 'preco_compra'
+    end
+    object ADOQuery1preco_venda: TFloatField
+      FieldName = 'preco_venda'
+    end
+    object ADOQuery1fornecedor: TStringField
+      FieldName = 'fornecedor'
+      Size = 100
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOQuery1
+    Left = 176
+    Top = 32
+  end
+  object ADOQuery2: TADOQuery
+    Active = True
+    Connection = ADOConnection1
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select*from fornecedores for update'
+      '')
+    Left = 464
+    Top = 56
+    object ADOQuery2nome_fantasia: TStringField
+      FieldName = 'nome_fantasia'
+      Size = 30
+    end
+  end
+end

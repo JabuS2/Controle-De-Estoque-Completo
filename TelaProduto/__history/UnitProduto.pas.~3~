@@ -1,0 +1,44 @@
+unit UnitProduto;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Mask,
+  Vcl.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    lbl1: TLabel;
+    lbl2: TLabel;
+    dbedtCodigo: TDBEdit;
+    lbl3: TLabel;
+    dbedtDescricao: TDBEdit;
+    lbl4: TLabel;
+    dbedtQuantidade: TDBEdit;
+    lbl5: TLabel;
+    dbedtPrecoCompra: TDBEdit;
+    lbl6: TLabel;
+    dbedtPrecoVenda: TDBEdit;
+    lbl7: TLabel;
+    dbcbFornecedor: TDBComboBox;
+    btnCadastrar: TButton;
+    btt2: TButton;
+    btnCancelar: TButton;
+    Shape1: TShape;
+    GroupBox1: TGroupBox;
+    procedure btnCancelarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+end.

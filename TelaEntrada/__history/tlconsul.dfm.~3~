@@ -1,0 +1,91 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Adicionar Produtos'
+  ClientHeight = 272
+  ClientWidth = 337
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clInactiveBorder
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object adcpro: TLabel
+    Left = 64
+    Top = 24
+    Width = 184
+    Height = 24
+    Caption = 'Entrada De Produtos'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -20
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblcodigo: TLabel
+    Left = 24
+    Top = 80
+    Width = 106
+    Height = 16
+    Caption = 'C'#243'digo Do Produto'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object lblqnt: TLabel
+    Left = 184
+    Top = 80
+    Width = 132
+    Height = 16
+    Caption = 'Quantidade De Entrada'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -13
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
+  object btnslv: TButton
+    Left = 24
+    Top = 168
+    Width = 121
+    Height = 41
+    Caption = 'Salvar'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clInactiveBorder
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+  end
+  object btncan: TButton
+    Left = 184
+    Top = 168
+    Width = 121
+    Height = 41
+    Caption = 'Cancelar'
+    TabOrder = 1
+  end
+  object edtcod: TDBEdit
+    Left = 24
+    Top = 113
+    Width = 121
+    Height = 21
+    TabOrder = 2
+  end
+  object edtqnd: TDBEdit
+    Left = 184
+    Top = 113
+    Width = 121
+    Height = 21
+    TabOrder = 3
+  end
+end
